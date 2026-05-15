@@ -55,6 +55,7 @@ const useGameEngine = (
   const enemiesRef = useRef([]);
 
   const currentLevelRef = useRef(null);
+  const levelIndexRef = useRef(currentLevel);
 
   // ========================================
   // Keyboard State
@@ -70,6 +71,8 @@ const useGameEngine = (
   // ========================================
 
   useEffect(() => {
+    //Level settup
+    levelIndexRef.current = currentLevel;
     // ========================================
     // Canvas Setup
     // ========================================
@@ -144,7 +147,7 @@ const useGameEngine = (
       // Load Current Level
       // ========================================
 
-      const createLevel = levels[currentLevel];
+      const createLevel = levels[levelIndexRef.current];
       currentLevelRef.current = createLevel({
         platformImg,
         platformSmallTallImg,
@@ -417,8 +420,13 @@ const useGameEngine = (
 
         if (scrollOffset.current > currentLevelRef.current.winOffset) {
           onWin();
-        }
 
+          levelIndexRef.current += 1;
+
+          if (levelIndexRef.current >= levels.length) return;
+
+          init();
+        }
         // ========================================
         // Fall Death Logic
         // ========================================
@@ -531,7 +539,7 @@ const useGameEngine = (
 
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, []);
+  }, [gameState]);
 
   // ========================================
   // Hook Export

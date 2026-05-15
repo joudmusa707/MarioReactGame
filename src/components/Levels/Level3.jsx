@@ -64,7 +64,7 @@ const Level3 = ({
     platforms,
     coins,
     enemies,
-    winOffset: 4600,
+    winOffset: 4650,
   };
 };
 

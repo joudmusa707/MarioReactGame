@@ -30,11 +30,11 @@ const Level6 = ({
 
     new Platform(3900, 150, platformSmallTallImg, 60, 60),
 
-    new Platform(4500, 470, platformImg),
+    new Platform(4250, 470, platformImg),
 
-    new Platform(5400, 300, platformImg),
+    new Platform(4400, 300, platformImg),
 
-    new Platform(6500, 470, platformImg),
+    new Platform(4600, 470, platformImg),
   ];
 
   const coins = [];
@@ -61,7 +61,7 @@ const Level6 = ({
     platforms,
     coins,
     enemies,
-    winOffset: 8500,
+    winOffset: 4550,
   };
 };
 
