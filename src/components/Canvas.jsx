@@ -2,6 +2,7 @@ import { useRef } from "react";
 import useGameEngine from "./useGameEngine";
 const Canvas = ({
   gameState,
+  currentLevel,
   onCoinCollect,
   onEnemyKill,
   onPlayerDeath,
@@ -12,7 +13,9 @@ const Canvas = ({
 
   useGameEngine(canvasRef, {
     gameState,
+    currentLevel,
     onCoinCollect,
+
     onEnemyKill,
     onPlayerDeath,
     onWin,
