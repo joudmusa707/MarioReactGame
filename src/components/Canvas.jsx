@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import useGameEngine from "./useGameEngine";
+import "../style/Canvas.css";
 const Canvas = ({
   gameState,
   currentLevel,
@@ -22,11 +23,6 @@ const Canvas = ({
     onCoinReset: onScoreReset,
   });
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ boxShadow: "0 0 20px rgba(0,0,0,0.5)", background: "#fff" }}
-    />
-  );
+  return <canvas ref={canvasRef} className="game-canvas" />;
 };
 export default Canvas;

@@ -59,7 +59,7 @@ const Level2 = ({
   const enemies = [
     new Enemy({
       x: 1800,
-      y: 420,
+      y: 420 - 50,
       image: enemyImg,
       distance: 300,
     }),

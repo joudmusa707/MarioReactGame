@@ -1,0 +1,61 @@
+.overlay-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  min-width: 300px;
+}
+
+.overlay-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* Conditional State Classes */
+.overlay-title.win-text {
+  color: #4caf50;
+}
+
+.overlay-title.lose-text {
+  color: #f44336;
+}
+
+.overlay-score {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.overlay-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+.btn-restart {
+  background-color: #333;
+}
+
+.btn-next {
+  background-color: #4caf50;
+}
+.btn-restart:hover {
+  background-color: #555;
+}
+.btn-next:hover {
+  background-color: #45a049;
+}

@@ -3,7 +3,7 @@ import Canvas from "./Canvas";
 import Score from "./Score";
 import Lives from "./Lives";
 import GameOverlay from "./OverLayCard";
-
+import "../style/GameUI.css";
 const GameUI = () => {
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(3);
@@ -63,20 +63,10 @@ const GameUI = () => {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#222",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: 0,
-        overflow: "hidden",
-      }}
-    >
+    <div className="gameUI-parent-container">
       <Score score={score} />
       <Lives lives={lives} />
-      <div style={{ position: "relative" }}>
+      <div className="game-container">
         {gameState !== "playing" && (
           <GameOverlay
             gameState={gameState}
